@@ -28,7 +28,7 @@ rescue ActiveRecord::PendingMigrationError => e
   exit 1
 end
 
-require 'database_cleaner'
+require 'database_cleaner/active_record'
 
 RSpec.configure do |config|
   config.before(:suite) do

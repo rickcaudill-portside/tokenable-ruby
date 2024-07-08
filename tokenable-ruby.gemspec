@@ -28,5 +28,5 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   spec.add_dependency 'jwt', '~> 2.2', '< 3'
-  spec.add_dependency 'rails', '~> 6.0', '< 7.2'
+  spec.add_dependency 'rails'
 end
