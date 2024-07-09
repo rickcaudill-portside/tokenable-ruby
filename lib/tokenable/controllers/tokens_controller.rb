@@ -18,6 +18,7 @@ module Tokenable
         data: {
           token: token_from_user(user),
           user_id: user.id,
+          user: user.as_json(Tokenable::Config.user_fields)
         },
       }
 

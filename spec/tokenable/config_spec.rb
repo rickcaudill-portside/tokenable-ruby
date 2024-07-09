@@ -32,4 +32,14 @@ describe Tokenable::Config do
     expect(described_class.class_variable_get('@@user_class')).to be_a(String)
     expect(described_class.user_class).to eq(User)
   end
+
+  it 'ensures user_config returns empty object' do
+    expect(described_class.user_fields).to eq({})
+  end
+
+  it 'ensures user_config returns email in object' do
+    described_class.user_fields = [only: [:email]]
+    expect(described_class.user_fields).to eq( [{:only=>[:email]}])
+  end
+  
 end

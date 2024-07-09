@@ -40,6 +40,7 @@ describe Tokenable::TokensController, type: :controller do
       post :create, params: { email: user.email, password: password }
 
       expect(response.parsed_body['data']['user_id']).to eq(user.id)
+      expect(response.parsed_body['data']['user']['email']).to eq(user.email)
       expect(response.parsed_body['data']['token']).not_to eq be_nil
 
       token = response.parsed_body['data']['token']

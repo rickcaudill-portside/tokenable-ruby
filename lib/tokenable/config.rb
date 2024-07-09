@@ -15,6 +15,8 @@ module Tokenable
     # The user model that we will perform actions on
     mattr_writer :user_class, default: -> { 'User' }
 
+    mattr_writer :user_fields, default: -> {{}}
+
     def self.user_class
       class_name = proc_reader(:user_class)
       class_name.is_a?(String) ? class_name.constantize : class_name
