@@ -38,8 +38,8 @@ describe Tokenable::Config do
   end
 
   it 'ensures user_config returns email in object' do
-    described_class.user_fields = [only: [:email]]
-    expect(described_class.user_fields).to eq( [{:only=>[:email]}])
+    described_class.user_fields = {only: [:email]}
+    expect(described_class.user_fields).to eq( {:only=>[:email]})
   end
   
 end
